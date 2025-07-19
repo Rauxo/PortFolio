@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar"
+import Achievement from "./Achievement"
 import Education from "./Education"
 import HeroSection from "./HeroSection"
 import Projects from "./Projects"
@@ -12,6 +13,7 @@ function Home() {
       <Education/>
       <TechStack/>
       <Projects/>
+      <Achievement/>
     </div>
   )
 }
