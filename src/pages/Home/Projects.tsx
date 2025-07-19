@@ -15,7 +15,7 @@ function Projects() {
         "Secure payment processing",
         "Role-based access control"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
+      technologies: ["React", "Node.js", "MongoDB", "Express","Tailwind CSS","Redux"],
       accentColor: "#7b4ae2",
       demoLink: "https://www.linkedin.com/posts/rahul-saikia-b94a5a29a_mern-webdevelopment-tailwindcss-activity-7334239534894743554-t-7E?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEhqNyAB_17HHQSQPAurFVyBAakVlQjbstU",
       codeLink: "#"
@@ -38,16 +38,16 @@ function Projects() {
     },
     {
       id: 3,
-      title: "WuruStore E-commerce",
+      title: "Wuru Store",
       category: "Full Stack",
-      description: "Full-featured e-commerce platform for tech gadgets with advanced filtering.",
+      description: "Full-featured online game platform recharge website.",
       features: [
-        "Product filtering & search",
-        "Shopping cart & wishlist",
-        "Order tracking system",
-        "Admin product management"
+        "Buy and Recharge Game account",
+        "Complete Responsive with premium design",
+        "Complete Dynamic",
+        "Complete Control from Admin Panel"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
+      technologies: ["React", "Node.js", "MongoDB","ExpressJS", "Redux","Payment Gateway" ],
       accentColor: "#654ea3",
       demoLink: "https://wurustore.in/",
       codeLink: "#"
@@ -165,14 +165,6 @@ function Projects() {
         </div>
       </div>
       
-      <div className="section-footer">
-        <p>Interested in collaborating? <a href="#contact">Let's discuss your project</a></p>
-        <div className="floating-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-        </div>
-      </div>
     </section>
   );
 }
