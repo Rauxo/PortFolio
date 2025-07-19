@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import Achievement from "./Achievement"
 import Education from "./Education"
@@ -14,6 +15,7 @@ function Home() {
       <TechStack/>
       <Projects/>
       <Achievement/>
+      <Footer/>
     </div>
   )
 }

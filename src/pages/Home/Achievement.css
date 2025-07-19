@@ -1,24 +1,23 @@
-/* Achievement.css */
 .achievement-page {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0c29, #1a0a2e, #24243e);
-  color: #f0f0f0;
+  background: linear-gradient(135deg, #1a0a2e, #2a1a5e, #3c2f8e);
+  color: #f5f5f5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 2rem;
+  padding: 3rem;
   overflow: hidden;
 }
 
 .celebration-ribbon {
   position: absolute;
   width: 100%;
-  height: 60px;
-  background: linear-gradient(45deg, #ffd700, #ffa500);
+  height: 70px;
+  background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(184, 134, 11, 0.5);
   animation: ribbonEntry 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
@@ -41,24 +40,26 @@
 }
 
 .ribbon-text {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 0.8rem; /* Slightly smaller for better mobile fit */
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 4px;
   color: #1a0a2e;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  animation: pulse 2s infinite;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.8s infinite;
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center;
+  line-height: 1.2; /* Ensure text fits within ribbon height */
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
 .achievement-container {
   max-width: 1200px;
-  margin: 120px auto 100px;
+  margin: 140px auto 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,13 +69,13 @@
 
 .trophy-container {
   position: relative;
-  margin-bottom: 3rem;
-  animation: float 3s ease-in-out infinite;
+  margin-bottom: 3.5rem;
+  animation: float 2.8s ease-in-out infinite;
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-25px); }
   100% { transform: translateY(0px); }
 }
 
@@ -84,20 +85,21 @@
 }
 
 .cup {
-  width: 120px;
-  height: 100px;
-  background: linear-gradient(to bottom, #ffd700, #ffa500);
+  width: 140px;
+  height: 120px;
+  background: linear-gradient(to bottom, #ffd700, #b8860b, #8b6508);
   border-radius: 50% 50% 0 0;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
 }
 
 .cup::before {
   content: '';
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   bottom: 0;
   background: linear-gradient(to bottom, #ffec8b, #ffd700);
   border-radius: 50% 50% 0 0;
@@ -106,93 +108,112 @@
 .cup::after {
   content: '🏆';
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .base {
-  width: 80px;
-  height: 20px;
-  background: linear-gradient(to bottom, #d4af37, #b8860b);
+  width: 90px;
+  height: 25px;
+  background: linear-gradient(to bottom, #b8860b, #8b6508);
   margin: 0 auto;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .trophy-glow {
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent 70%);
   z-index: 1;
   border-radius: 50%;
-  animation: glow 2s infinite alternate;
+  animation: glow 1.8s infinite alternate;
 }
 
 @keyframes glow {
-  from { opacity: 0.5; }
+  from { opacity: 0.4; }
   to { opacity: 1; }
 }
 
-.title {
-  font-size: 3.5rem;
-  font-weight: 800;
+.certificate-container {
+  margin: 2rem 0;
   text-align: center;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffd700, #ffa500);
+  animation: cardEntry 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.certificate-image {
+  max-width: 100%;
+  width: 600px;
+  border: 5px solid #b8860b;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.certificate-image:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(45deg, #ffd700, #b8860b, #ff4500);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 0.5rem;
-  color: #f0f0f0;
+  margin-bottom: 0.8rem;
+  color: #f5f5f5;
 }
 
 .event {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
-  color: #a0aec0;
-  margin-bottom: 2rem;
+  color: #b0b8c0;
+  margin-bottom: 2.5rem;
   font-style: italic;
 }
 
 .badge {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  background: linear-gradient(45deg, #ff4500, #b8860b);
   color: white;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
   margin: 0 auto 3rem;
   width: fit-content;
-  box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
-  animation: badgePulse 2s infinite;
+  box-shadow: 0 12px 25px rgba(255, 69, 0, 0.4);
+  animation: badgePulse 1.8s infinite;
 }
 
 @keyframes badgePulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 65, 108, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 65, 108, 0); }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+  70% { transform: scale(1.06); box-shadow: 0 0 0 18px rgba(255, 69, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
 }
 
 .achievement-card {
-  background: rgba(26, 10, 46, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(123, 74, 226, 0.3);
+  background: rgba(26, 10, 46, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(184, 134, 11, 0.4);
   width: 100%;
-  max-width: 800px;
   animation: cardEntry 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -202,9 +223,9 @@
 }
 
 .section {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(123, 74, 226, 0.2);
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.3);
 }
 
 .section:last-child {
@@ -214,86 +235,86 @@
 }
 
 .section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #9d7aff;
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+  color: #b8860b;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .section p {
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  color: #e2e8f0;
-  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+  color: #e8ecef;
+  font-size: 1.2rem;
 }
 
 .section ul {
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
 }
 
 .section li {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: #e2e8f0;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  color: #e8ecef;
   position: relative;
-  padding-left: 2.5rem;
+  padding-left: 2.8rem;
 }
 
 .feature-icon {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.5rem;
-  width: 2rem;
+  font-size: 1.8rem;
+  width: 2.2rem;
   text-align: center;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
 }
 
 .tech-pill {
-  background: rgba(123, 74, 226, 0.2);
-  color: #9d7aff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 500;
-  border: 1px solid rgba(123, 74, 226, 0.3);
+  background: rgba(184, 134, 11, 0.3);
+  color: #ffd700;
+  padding: 1rem 1.8rem;
+  border-radius: 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 1px solid rgba(184, 134, 11, 0.4);
 }
 
 .team-members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.8rem;
 }
 
 .member {
   display: flex;
-  gap: 1rem;
-  background: rgba(123, 74, 226, 0.1);
-  padding: 1.5rem;
-  border-radius: 15px;
-  border: 1px solid rgba(123, 74, 226, 0.2);
-  transition: transform 0.3s ease;
+  gap: 1.2rem;
+  background: rgba(184, 134, 11, 0.15);
+  padding: 1.8rem;
+  border-radius: 18px;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .member:hover {
-  transform: translateY(-5px);
-  background: rgba(123, 74, 226, 0.2);
+  transform: translateY(-8px);
+  background: rgba(184, 134, 11, 0.25);
 }
 
 .member-icon {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
-  background: rgba(123, 74, 226, 0.3);
+  font-size: 2.2rem;
+  width: 70px;
+  height: 70px;
+  background: rgba(184, 134, 11, 0.4);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -301,18 +322,45 @@
 }
 
 .member-name {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 .member-role {
-  color: #a0aec0;
-  font-size: 0.95rem;
+  color: #b0b8c0;
+  font-size: 1rem;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 2rem;
+  }
+  
+  .achievement-card {
+    padding: 2rem;
+  }
+  
+  .section h3 {
+    font-size: 1.8rem;
+  }
+  
+  .badge {
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+  }
+  
+  .certificate-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
   .title {
     font-size: 2.5rem;
   }
@@ -321,43 +369,24 @@
     font-size: 1.8rem;
   }
   
-  .achievement-card {
-    padding: 1.5rem;
-  }
-  
-  .section h3 {
-    font-size: 1.5rem;
-  }
-  
-  .badge {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1.5rem;
-  }
-  
   .event {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .achievement-container {
-    margin: 80px auto 60px;
+    margin: 100px auto 80px;
   }
   
   .section li {
-    padding-left: 2rem;
+    padding-left: 2.2rem;
   }
   
   .feature-icon {
-    font-size: 1.2rem;
-    width: 1.5rem;
+    font-size: 1.4rem;
+    width: 1.8rem;
+  }
+  
+  .certificate-image {
+    width: 100%;
   }
 }

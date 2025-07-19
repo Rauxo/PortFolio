@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Confetti from 'react-confetti';
+import certificateImage from '../../assets/hackathon.jpeg';
 import './Achievement.css';
 
 function Achievement() {
@@ -37,31 +38,30 @@ function Achievement() {
           width={windowSize.width}
           height={windowSize.height}
           recycle={true}
-          numberOfPieces={200}
-          gravity={0.1}
-          colors={['#ffd700', '#ffa500', '#ff8c00', '#ff6347', '#7b4ae2']}
+          numberOfPieces={300}
+          gravity={0.08}
+          colors={['#ffd700', '#b8860b', '#ff8c00', '#ff4500', '#7b4ae2']}
         />
       )}
       
       <div className="celebration-ribbon top-ribbon">
-        <div className="ribbon-text">WINNER</div>
       </div>
       
       <div className="achievement-container">
         <div className="trophy-container">
-          <div className="trophy">
-            <div className="cup"></div>
-            <div className="base"></div>
-          </div>
           <div className="trophy-glow"></div>
         </div>
         
         <div className="achievement-content">
-          <h1 className="title">Hackathon Winner</h1>
+          <h1 className="title">Hackathon Champion</h1>
           <h2 className="subtitle">Anganwadi Smart Digital Solution</h2>
           <p className="event">Dhemaji Engineering College Hackathon 2025</p>
           
           <div className="badge">1st Place</div>
+          
+          <div className="certificate-container">
+            <img src={certificateImage} alt="Hackathon Certificate" className="certificate-image" />
+          </div>
           
           <div className="achievement-card">
             <div className="section">
@@ -109,8 +109,8 @@ function Achievement() {
                 <div className="member">
                   <div className="member-icon">👤</div>
                   <div>
-                    <div className="member-name">Rahul Saikia</div>
-                    <div className="member-role">Full Stack Developer (React Native, Backend API)</div>
+                    <div className="member-name">Rahul(Me)</div>
+                    <div className="member-role">Full Stack Developer (Team Leader) </div>
                   </div>
                 </div>
                 <div className="member">
@@ -124,7 +124,7 @@ function Achievement() {
                   <div className="member-icon">👤</div>
                   <div>
                     <div className="member-name">Ranjit</div>
-                    <div className="member-role">UI/UX & Data Logic</div>
+                    <div className="member-role">AI/ML</div>
                   </div>
                 </div>
               </div>
@@ -141,10 +141,7 @@ function Achievement() {
           </div>
         </div>
       </div>
-      
-      <div className="celebration-ribbon bottom-ribbon">
-        <div className="ribbon-text">CHAMPIONS</div>
-      </div>
+
     </div>
   );
 }
