@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar"
 import Education from "./Education"
 import HeroSection from "./HeroSection"
+import Projects from "./Projects"
 import TechStack from "./TechStack"
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <HeroSection/>
       <Education/>
       <TechStack/>
+      <Projects/>
     </div>
   )
 }

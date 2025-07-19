@@ -21,7 +21,7 @@ function TechStack() {
         { name: "HTML", icon: "H", color: "#E44D26", proficiency: 99 },
         { name: "CSS", icon: "C", color: "#264DE4", proficiency: 99 },
         { name: "JavaScript", icon: "JS", color: "#F7DF1E", proficiency: 90 },
-        { name: "React", icon: "R", color: "#61DAFB", proficiency: 90 }
+        { name: "React Native", icon: "R", color: "#61DAFB", proficiency: 90 }
       ]
     },
     { 

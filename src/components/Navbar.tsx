@@ -30,8 +30,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <div className="logo">
-            <span className="logo-icon">✨</span>
-            <span className="logo-text">Portfolio</span>
+            <span className="logo-text">Rahul's Portfolio</span>
           </div>
           
           {/* Desktop Navigation */}
