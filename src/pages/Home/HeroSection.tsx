@@ -1,5 +1,7 @@
 import  { useState, useEffect, useRef } from 'react';
 import './HeroSection.css';
+import CV from '../../assets/CV.pdf';
+
 
 function HeroSection() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -24,10 +26,15 @@ function HeroSection() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
   
-  const handleDownload = () => {
-    // In a real app, you would trigger the download here
-    alert('Downloading resume...');
-  };
+        const handleDownload = () => {
+          const link = document.createElement('a');
+          link.href = CV;
+          link.download = 'Rahul_Saikia_Resume.pdf'; // You can name it whatever you want
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+
 
   return (
     <div className="hero-container" ref={heroRef}>
