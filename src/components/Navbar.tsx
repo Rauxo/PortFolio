@@ -29,9 +29,10 @@ const Navbar = () => {
       
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
+          <Link to="/">
           <div className="logo">
             <span className="logo-text">Rahul's Portfolio</span>
-          </div>
+          </div></Link>
           
           {/* Desktop Navigation */}
           <div className="nav-links">

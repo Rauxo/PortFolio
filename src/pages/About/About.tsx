@@ -5,7 +5,8 @@ import Navbar from '../../components/Navbar';
 
 function About() {
   const particles = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => {
+    //@ts-ignore
+    return Array.from({ length: 30 }).map((_, ) => {
       const size = Math.floor(Math.random() * 8) + 2;
       const top = Math.floor(Math.random() * 100);
       const left = Math.floor(Math.random() * 100);
@@ -22,18 +23,23 @@ function About() {
     if (!techStackRef.current) return;
     
     const container = techStackRef.current;
+    //@ts-ignore
     const items = container.querySelector('.tech-scroll-inner');
     const clone = items.cloneNode(true);
+    //@ts-ignore
     container.appendChild(clone);
-    
+    //@ts-ignore
     const itemCount = container.querySelectorAll('.tech-item').length / 2;
     const duration = itemCount * 3; // 3s per item
     
+    //@ts-ignore
     container.style.setProperty('--duration', `${duration}s`);
+    //@ts-ignore
     container.classList.add('animate-scroll');
     
     // Cleanup function
     return () => {
+      //@ts-ignore
       container.removeChild(clone);
     };
   }, []);
@@ -51,6 +57,7 @@ function About() {
           key={i}
           className="particle" 
           style={{
+            //@ts-ignore
             '--size': `${particle.size}px`,
             '--top': `${particle.top}%`,
             '--left': `${particle.left}%`,
@@ -77,7 +84,7 @@ function About() {
             <h3>Background</h3>
             <p>
               Passionate Full Stack Developer from Assam, India. Currently pursuing BCA with 
-              <span className="highlight"> 3+ years experience</span> building professional web/mobile apps using 
+              <span className="highlight"> 2+ years experience</span> building professional web/mobile apps using 
               <span className="highlight"> MERN stack</span>. Specialize in PostgreSQL, React Native & cloud deployment.
             </p>
           </div>
